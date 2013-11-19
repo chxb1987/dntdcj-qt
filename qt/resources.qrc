@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="Backward.png">Icons/Backward.png</file>
+        <file alias="ClearTroubleCode.png">Icons/Clear Trouble Code.png</file>
+        <file alias="IdleControlLearningValueInitialize.png">Icons/Idle Control Learning Value Initialize.png</file>
+        <file alias="LongTermLearningValueInitialize.png">Icons/Long Term Learning Value Initialize.png</file>
+        <file alias="ReadCurrentTroubleCode.png">Icons/Read Current Trouble Code.png</file>
+        <file alias="ReadDataStream.png">Icons/Read Data Stream.png</file>
+        <file alias="ReadECUVersion.png">Icons/Read ECU Version.png</file>
+        <file alias="ReadHistoryTroubleCode.png">Icons/Read History Trouble Code.png</file>
+        <file alias="TPSIdleSetting.png">Icons/TPS Idle Setting.png</file>
+        <file alias="Vehicle.png">Icons/Vehicle.png</file>
+        <file alias="VehicleSelected.png">Icons/VehicleSelected.png</file>
+    </qresource>
+</RCC>
