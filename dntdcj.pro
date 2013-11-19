@@ -86,3 +86,6 @@ FORMS    += \
 
 RESOURCES += \
     qt/resources.qrc
+
+OTHER_FILES += \
+    README.md
