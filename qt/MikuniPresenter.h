@@ -32,7 +32,6 @@ public:
   ~MikuniPresenter();
   void setMikuniWidget(MikuniWidget *widget);
   virtual void show();
-  virtual DNTLiveDataList getLiveData();
   virtual DNTTroubleCodeVector getTroubleCode();
 signals:
   void setSoftwareVersion(const QString &text);

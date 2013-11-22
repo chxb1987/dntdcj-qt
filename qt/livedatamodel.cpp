@@ -17,7 +17,7 @@ int LiveDataModel::rowCount(const QModelIndex &parent) const
 {
   Q_UNUSED(parent);
   if (!_lds.isEmpty())
-    return _lds.showedCount();
+    return _lds.size();
   return 0;
 }
 
@@ -32,7 +32,7 @@ QVariant LiveDataModel::data(const QModelIndex &index, int role) const
   if (!index.isValid()) return QVariant();
   if (_lds.isEmpty()) return QVariant();
 
-  auto i = _lds.getShowedIndex(index.row());
+  auto i = index.row();
   if (role == Qt::DisplayRole) {
     switch (index.column()) {
     case 0:
@@ -106,17 +106,17 @@ QVariant LiveDataModel::headerData(int section, Qt::Orientation orientation, int
 void LiveDataModel::clear()
 {
   if (!_lds.isEmpty()) {
-    beginRemoveRows(QModelIndex(), 0, _lds.showedCount() - 1);
+    beginRemoveRows(QModelIndex(), 0, _lds.size() - 1);
     endRemoveRows();
   }
 }
 
-void LiveDataModel::update(const DNTLiveDataList &lds)
+void LiveDataModel::update(const DNTLiveDataList::Elements &lds)
 {
   clear();
   _lds = lds;
   if (_lds.isEmpty()) return;
-  beginInsertRows(QModelIndex(), 0, _lds.showedCount() - 1);
+  beginInsertRows(QModelIndex(), 0, _lds.size() - 1);
   endInsertRows();
 }
 

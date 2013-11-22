@@ -12,7 +12,7 @@ class LiveDataModel : public QAbstractTableModel
 {
   Q_OBJECT
 private:
-  DNTLiveDataList _lds;
+  DNTLiveDataList::Elements _lds;
   QString _shortNameHeader;
   QString _contentHeader;
   QString _valueHeader;
@@ -28,7 +28,7 @@ public:
   void setData(int index, const QString &value);
   QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
   void clear();
-  void update(const DNTLiveDataList &lds);
+  void update(const DNTLiveDataList::Elements &lds);
 };
 
 #endif // __LIVEDATA_MODEL_H__

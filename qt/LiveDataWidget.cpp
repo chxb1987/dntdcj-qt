@@ -37,7 +37,9 @@ void LiveDataWidget::changeEvent(QEvent *event)
 void LiveDataWidget::updateData()
 {
   if (_dataContext == nullptr) return;
-  _model.update(_dataContext->getLiveData());
+  auto items = _dataContext->getLiveData().getShowedItems();
+  _model.update(items);
+  _delegate.setLiveData(items);
 }
 
 void LiveDataWidget::clear()

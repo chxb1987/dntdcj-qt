@@ -76,7 +76,7 @@ protected:
 public:
   ECUPresenter(DNTAbstractECU *ecu, QObject *parent = 0);
   virtual ~ECUPresenter();
-  virtual DNTLiveDataList getLiveData() = 0;
+  virtual DNTLiveDataList &getLiveData();
   virtual DNTTroubleCodeVector getTroubleCode() = 0;
   virtual void preparePage();
 protected slots:

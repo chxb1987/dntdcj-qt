@@ -69,8 +69,7 @@ ECUPresenter::CommunicationState ECUPresenter::preparePageData()
   }
 
   if (_internalState != CommunicationFail) {
-    getLiveData().collateEnable();
-    getLiveData().collateShowed();
+    getLiveData().collate();
     emit updateLiveDataUI();
     runDataStream();
   }
@@ -196,7 +195,7 @@ void ECUPresenter::updateDataStreamUI()
     return;
   }
 
-  auto items = vec.items();
+  auto items = vec.getShowedItems();
   while (_dataStreamUIUpdating) {
     for (int i = 0; i < items.size(); ++i) {
       QThread::currentThread()->msleep(10);
@@ -249,4 +248,10 @@ void ECUPresenter::quitFinish()
     emit hideStatus();
   }
   _preDataContext->show();
+}
+
+DNTLiveDataList &ECUPresenter::getLiveData()
+{
+  auto ds = _ecu->getDataStream();
+  return ds.getLiveData();
 }

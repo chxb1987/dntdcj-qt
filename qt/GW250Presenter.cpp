@@ -121,12 +121,6 @@ GW250Presenter::CommunicationState GW250Presenter::readDataStream()
   return Success;
 }
 
-DNTLiveDataList GW250Presenter::getLiveData()
-{
-  auto ds = _ecu->getDataStream();
-  return ds.getLiveData();
-}
-
 DNTTroubleCodeVector GW250Presenter::getTroubleCode()
 {
   auto tc = _ecu->getTroubleCode();

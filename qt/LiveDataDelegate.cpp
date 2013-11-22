@@ -19,7 +19,7 @@ void LiveDataDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionV
   QItemDelegate::updateEditorGeometry(editor, option, index);
 }
 
-void LiveDataDelegate::setLiveData(const DNTLiveDataList &lds)
+void LiveDataDelegate::setLiveData(const DNTLiveDataList::Elements &lds)
 {
   _lds = lds;
 }

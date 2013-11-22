@@ -12,11 +12,11 @@ class LiveDataDelegate : public QItemDelegate
 {
   Q_OBJECT
 private:
-  DNTLiveDataList _lds;
+  DNTLiveDataList::Elements _lds;
 public:
   explicit LiveDataDelegate(QObject *parent = 0);
   void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const;
-  void setLiveData(const DNTLiveDataList &lds);
+  void setLiveData(const DNTLiveDataList::Elements &lds);
 };
 
 #endif // __LIVEDATA_DELEGATE_H__

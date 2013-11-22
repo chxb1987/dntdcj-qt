@@ -23,7 +23,6 @@ public:
   ~GW250Presenter();
   void setGW250Widget(GW250Widget *widget);
   virtual void show();
-  virtual DNTLiveDataList getLiveData();
   virtual DNTTroubleCodeVector getTroubleCode();
 protected slots:
   virtual void realPreparePage();

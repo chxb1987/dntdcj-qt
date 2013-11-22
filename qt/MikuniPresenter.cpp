@@ -194,12 +194,6 @@ MikuniPresenter::CommunicationState MikuniPresenter::readDataStream()
   return Success;
 }
 
-DNTLiveDataList MikuniPresenter::getLiveData()
-{
-  auto ds = _ecu->getDataStream();
-  return ds.getLiveData();
-}
-
 DNTTroubleCodeVector MikuniPresenter::getTroubleCode()
 {
   auto tc = _ecu->getTroubleCode();
