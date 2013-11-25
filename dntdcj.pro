@@ -15,14 +15,12 @@ CONFIG += qwt
 
 INCLUDEPATH += ../dntdiag/native\
                ../dntdiag/qt \
-               ../dntecu/native \
-               ../dntecu/qt
 
 win32 {
 INCLUDEPATH += $$(BOOST_INCLUDE)
 }
 
-LIBS += -ldntdiag -ldntecu
+LIBS += -ldntdiag
 
 SOURCES += \
     qt/main.cpp \
