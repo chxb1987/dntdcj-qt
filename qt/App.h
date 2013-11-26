@@ -33,8 +33,8 @@ public: // construct
 public: // Diag
   bool openCommbox(QString &result);
   void closeCommbox();
-  DNTCommbox *commbox();
-  DNTVehicleDB *db();
+  DNTCommbox &commbox();
+  DNTVehicleDB &db();
 };
 
 inline App* AppInst()

@@ -6,7 +6,7 @@
 #include "GW250Widget.h"
 
 GW250Presenter::GW250Presenter(QObject *parent)
-  : ECUPresenter(new DNTDensoPowertrain(AppInst()->commbox()->getNative(), AppInst()->db()->getNative(), RDensoModel::DCJ_GW250), parent)
+  : ECUPresenter(new DNTDensoPowertrain(AppInst()->commbox(), AppInst()->db(), RDensoModel::DCJ_GW250), parent)
 {
 
 }

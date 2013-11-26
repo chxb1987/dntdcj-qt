@@ -50,12 +50,12 @@ void App::closeCommbox()
   _commbox->disconnect();
 }
 
-DNTCommbox* App::commbox()
+DNTCommbox& App::commbox()
 {
-  return _commbox;
+  return *_commbox;
 }
 
-DNTVehicleDB* App::db()
+DNTVehicleDB& App::db()
 {
-  return _db;
+  return *_db;
 }

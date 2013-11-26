@@ -22,19 +22,19 @@ void MainMenuPresenter::preparePage()
 
   emit itemClr();
 
-  QString name = AppInst()->db()->getText("HJ125T-16A", "DCJ");
+  QString name = AppInst()->db().getText("HJ125T-16A", "DCJ");
   emit itemAdd(MenuItem(name, icon, icon_s));
   _funcSelected[name] = boost::bind(&HJ125T_16APresenter::show, _hj125t_16a);
 
-  name = AppInst()->db()->getText("HJ125T-16C", "DCJ");
+  name = AppInst()->db().getText("HJ125T-16C", "DCJ");
   _funcSelected[name] = boost::bind(&HJ125T_16CPresenter::show, _hj125t_16c);
   emit itemAdd(MenuItem(name, icon, icon_s));
 
-  name = AppInst()->db()->getText("HJ125T-10", "DCJ");
+  name = AppInst()->db().getText("HJ125T-10", "DCJ");
   _funcSelected[name] = boost::bind(&HJ125T_10Presenter::show, _hj125t_10);
   emit itemAdd(MenuItem(name, icon, icon_s));
 
-  name = AppInst()->db()->getText("GW250", "DCJ");
+  name = AppInst()->db().getText("GW250", "DCJ");
   _funcSelected[name] = boost::bind(&GW250Presenter::show, _gw250);
   emit itemAdd(MenuItem(name, icon, icon_s));
 }

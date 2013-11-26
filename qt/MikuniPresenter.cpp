@@ -5,7 +5,7 @@
 #include "App.h"
 
 MikuniPresenter::MikuniPresenter(RMikuniModel model, QObject *parent)
-  : ECUPresenter(new DNTMikuniPowertrain(AppInst()->commbox()->getNative(), AppInst()->db()->getNative(), model), parent)
+  : ECUPresenter(new DNTMikuniPowertrain(AppInst()->commbox(), AppInst()->db(), model), parent)
 {
 
 }
@@ -117,7 +117,7 @@ MikuniPresenter::CommunicationState MikuniPresenter::tpsIdleSetting2()
     _info = ecu->getLastInfo();
     _internalState = CommunicationFail;
   } else {
-    _info = AppInst()->db()->getText("TPS Idle Setting Success", "Mikuni");
+    _info = AppInst()->db().getText("TPS Idle Setting Success", "Mikuni");
     _internalState = Success;
   }
   runDataStream();
@@ -144,7 +144,7 @@ MikuniPresenter::CommunicationState MikuniPresenter::longTermLearnValueZoneIniti
     _info = ecu->getLastInfo();
     _internalState = CommunicationFail;
   } else {
-    _info = AppInst()->db()->getText("Long Term Learn Value Zone Initialization Success", "Mikuni");
+    _info = AppInst()->db().getText("Long Term Learn Value Zone Initialization Success", "Mikuni");
     _internalState = Success;
   }
   runDataStream();
@@ -171,7 +171,7 @@ MikuniPresenter::CommunicationState MikuniPresenter::iscLearnValueInitialization
     _info = ecu->getLastInfo();
     _internalState = CommunicationFail;
   } else {
-    _info = AppInst()->db()->getText("ISC Learn Value Initialization Success", "Mikuni");
+    _info = AppInst()->db().getText("ISC Learn Value Initialization Success", "Mikuni");
     _internalState = Success;
   }
   runDataStream();
